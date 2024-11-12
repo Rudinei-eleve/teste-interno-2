@@ -35,7 +35,7 @@
 			<!-- wp:group {"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group">
 				<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2","fontStyle":"normal","fontWeight":"500"}},"fontSize":"large"} -->
-				<p class="has-large-font-size" style="font-style:normal;font-weight:500;line-height:1.2"><?php echo esc_html_x( 'Our comprehensive suite of professional services caters to a diverse clientele, ranging from homeowners to commercial developers. With a commitment to innovation and sustainability, Études is the bridge that transforms architectural dreams into remarkable built realities.', 'Sample text for the feature area', 'twentytwentyfour' ); ?></p>
+				<p class="has-large-font-size" style="font-style:normal;font-weight:500;line-height:1.2"><?php echo esc_html_x( 'xml' ); ?></p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:spacer {"height":"var:preset|spacing|40","style":{"layout":{}}} -->
