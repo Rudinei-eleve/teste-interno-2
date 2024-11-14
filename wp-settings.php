@@ -164,6 +164,8 @@ if ( SHORTINIT ) {
 	return false;
 }
 
+
+
 // Load the L10n library.
 require_once ABSPATH . WPINC . '/l10n.php';
 require_once ABSPATH . WPINC . '/class-wp-textdomain-registry.php';

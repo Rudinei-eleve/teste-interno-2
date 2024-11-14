@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: wordpress_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Senha do root
+      MYSQL_DATABASE: site_interno       # Nome do banco de dados a ser criado (site_interno)
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_init.sql:/docker-entrypoint-initdb.d/db_init.sql  # Adiciona o dump do banco de dados
+    networks:
+      - wordpress-network
+
+  wordpress:
+    image: wordpress:latest
+    container_name: meu-site-wordpress
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306         # Nome do serviço MySQL no Docker
+      WORDPRESS_DB_NAME: site_interno    # Nome do banco de dados que o WordPress deve usar
+      WORDPRESS_DB_USER: root            # Usuário do banco de dados
+      WORDPRESS_DB_PASSWORD: rootpassword # Senha do banco de dados
+    volumes:
+      - ./wp-content:/var/www/html/wp-content  # Mapeia a pasta wp-content do WordPress
+    depends_on:
+      - db
+    networks:
+      - wordpress-network
+
+volumes:
+  db_data:
+
+networks:
+  wordpress-network:
