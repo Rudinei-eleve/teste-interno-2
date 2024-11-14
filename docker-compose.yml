@@ -1,5 +1,4 @@
 version: '3.1'
-
 services:
   db:
     image: mysql:5.7
@@ -13,7 +12,6 @@ services:
       - ./site_interno.sql:/docker-entrypoint-initdb.d/site_interno.sql  # Adiciona o dump do banco
     networks:
       - wordpress-network
-
   wordpress:
     image: wordpress:latest
     container_name: meu-site-wordpress
@@ -30,9 +28,7 @@ services:
       - db
     networks:
       - wordpress-network
-
 volumes:
   db_data:
-
 networks:
   wordpress-network:
