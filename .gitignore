@@ -1,1 +1,5 @@
 .htaccess
+
+# Ignorar dados do banco MySQL
+/var/lib/mysql/
+*.sql

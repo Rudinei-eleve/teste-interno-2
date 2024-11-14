@@ -5,11 +5,12 @@ services:
     image: mysql:5.7
     container_name: wordpress_db
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword  # Senha do root
-      MYSQL_DATABASE: site_interno       # Nome do banco de dados a ser criado (site_interno)
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: site_interno
     volumes:
       - db_data:/var/lib/mysql
-      - ./db_init.sql:/docker-entrypoint-initdb.d/db_init.sql  # Adiciona o dump do banco de dados
+      - ./db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
+      - ./site_interno.sql:/docker-entrypoint-initdb.d/site_interno.sql  # Adiciona o dump do banco
     networks:
       - wordpress-network
 
