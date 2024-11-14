@@ -20,22 +20,12 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'xvccpj' );
+define('DB_NAME', 'site_interno');  // Nome do banco de dados que você importou
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'rootpassword');
+define('DB_HOST', 'db:3306'); // Nome do serviço seguido pela porta
+ // Nome do contêiner MySQL
 
-/** Database username */
-define( 'DB_USER', 'xvccpj' );
-
-/** Database password */
-define( 'DB_PASSWORD', 'lxM%Jz2A?r@QVfs4' );
-
-/** Database hostname */
-define( 'DB_HOST', 'localhost' );
-
-/** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
-
-/** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -86,8 +76,9 @@ define( 'WP_DEBUG', false );
 
 
 /** Allow access from a different domain */
-define('WP_SITEURL', isset($_SERVER['HTTP_HOST']) ? (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://'.$_SERVER['HTTP_HOST'] : 'http://'.$_SERVER['HTTP_HOST'] : 'https://teste-interno-2.dev-eleveads.com.br');
-define('WP_HOME', isset($_SERVER['HTTP_HOST']) ? (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://'.$_SERVER['HTTP_HOST'] : 'http://'.$_SERVER['HTTP_HOST'] : 'https://teste-interno-2.dev-eleveads.com.br');
+define('WP_HOME', 'http://localhost/teste-interno-2');
+define('WP_SITEURL', 'http://localhost/teste-interno-2');
+
 
 /* That's all, stop editing! Happy publishing. */
 
